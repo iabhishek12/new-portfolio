@@ -6,6 +6,7 @@ import AboutSection from "../Components/About/AboutSection";
 import ProjectsSection from "../Components/Projects/ProjectsSection";
 import ContactSection from "../Components/Contact/ContactSection";
 import Footer from "../Layout/Footer";
+import { Toaster } from "react-hot-toast";
 
 const Portfolio = () => {
 
@@ -47,7 +48,7 @@ const Portfolio = () => {
         activeSection={activeSection}
         scrollToSection={scrollToSection}
       />
-
+<Toaster/>
       <HeroSection darkMode={darkMode} />
       <AboutSection darkMode={darkMode} />
       <ProjectsSection darkMode={darkMode} />

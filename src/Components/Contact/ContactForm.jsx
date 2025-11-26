@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const ContactForm = ({ darkMode }) => {
-   const [result, setResult] = useState("");
+
     const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
     const formData = new FormData(event.target);
     formData.append("access_key", "96c60646-115d-49e3-b5e4-3bd5994b8355");
 
@@ -15,10 +15,10 @@ const ContactForm = ({ darkMode }) => {
 
     const data = await response.json();
     if (data.success) {
-      setResult("Form Submitted Successfully");
+     toast.success("Form Submitted Successfully");
       event.target.reset();
     } else {
-      setResult("Error");
+      toast.error("Error");
     }
   };
   return (
